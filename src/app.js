@@ -22,10 +22,9 @@ var HelloWorldLayer = cc.Layer.extend({
         var juego = event.getCurrentTarget();
         var arr = juego.ceros;
         console.log(arr);
-        if(arr[0]==arr[1]==arr[2])
+        if(arr[0]==arr[1] && arr[1]==arr[2])
             return arr[0];
-        
-        else if(arr[3]==arr[4] && arr[4] ==arr[5])
+        else if(arr[3]==arr[4] && arr[4]==arr[5])
             return arr[3];
         else if(arr[6]==arr[7] && arr[7]==arr[8])
             return arr[6];
@@ -57,48 +56,57 @@ var HelloWorldLayer = cc.Layer.extend({
             {
                 juego.crearO(385,376,letoca);
                 juego.ceros[0]=letoca;
+                juego.turno++;
             }
         else if(x >= 433 && x < 526 && y >= 323 && y < 426 && juego.ceros[1]==null)
             {
                 juego.crearO(481,376,letoca);
                 juego.ceros[1]=letoca;
+                juego.turno++;
             }
         else if(x >= 526 && x < 615 && y >= 323 && y < 426 && juego.ceros[2]==null)
             {
                 juego.crearO(580,376,letoca);
                 juego.ceros[2]=letoca;
+                juego.turno++;
             }
         else if(x >= 342 && x < 433 && y >= 221 && y < 323 && juego.ceros[3]==null)
             {
                 juego.crearO(385,266,letoca);
                 juego.ceros[3]=letoca;
+                juego.turno++;
             }
         else if(x >= 433 && x < 526 && y >= 221 && y < 323 && juego.ceros[4]==null)
             {
                 juego.crearO(481,266,letoca);
                 juego.ceros[4]=letoca;
+                juego.turno++;
             }
         else if(x >= 526 && x < 615 && y >= 221 && y < 323 && juego.ceros[5]==null)
             {
                 juego.crearO(580,266,letoca);
                 juego.ceros[5]=letoca;
+                juego.turno++;
             }
         else if(x >= 342 && x < 433 && y >= 116 && y < 221 && juego.ceros[6]==null)
             {
                 juego.crearO(385,168,letoca);
                 juego.ceros[6]=letoca;
+                juego.turno++;
             }
         else if(x >= 433 && x < 526 && y >= 116 && y < 221 && juego.ceros[7]==null)
             {
                 juego.crearO(481,168,letoca);
                 juego.ceros[7]=letoca;
+                juego.turno++;
             }
         else if(x >= 526 && x < 615 && y >= 116 && y < 221 && juego.ceros[8]==null)
             {
                 juego.crearO(580,168,letoca);
                 juego.ceros[8]=letoca;
+                juego.turno++;
             }
-        juego.turno++;
+       
         var ganador = juego.verificar(event);
         if(ganador==="X") {
             alert("Ha ganado el jugador X");
